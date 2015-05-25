@@ -1,0 +1,30 @@
+{
+  "name": "gh-stats",
+  "version": "1.0.0",
+  "description": "Get stats about GitHub users and projects in your terminal.",
+  "main": "lib/index.js",
+  "dependencies": {
+    "clp": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IonicaBizau/gh-stats.git"
+  },
+  "keywords": [
+    "stats",
+    "github",
+    "command",
+    "line",
+    "calendar"
+  ],
+  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/gh-stats/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/gh-stats"
+}

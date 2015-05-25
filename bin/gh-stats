@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+
+// Dependencies
+var GitHubStats = require("../lib")
+  , Clp = require("clp")
+  , Package = require("../package")
+  , Logger = require("bug-killer")
+  ;
+
+// Logger config
+Logger.config.logLevel = 4;
+
+// Create options and add them
+var userOption = new Clp.Option(["u", "user"], "The GitHub user to get stats about.", "user")
+  , repoOption = new Clp.Option(["r", "repo"], "The full repository name.", "repository")
+  , noAnsiOption = new Clp.Option(["n", "no-ansi"], "Disable ansi styles.")
+  , lightOption = new Clp.Option(["l", "light"], "Use the light theme.")
+  , calOption = new Clp.Option(["c", "calendar"], "Show the calendar.")
+  , userStatsOption = new Clp.Option(["us", "user-stats"], "Display user stats.")
+  , repoStatsOption = new Clp.Option(["rs", "repo-stats"], "Display repository stats.")
+  , parser = new Clp({
+        name: "GitHub Stats"
+      , version: Package.version
+      , process: true
+      , exe: Package.name
+      , examples: [
+            "gh-stats -u IonicaBizau -r gh-stats --us --rs -c # Show everything"
+          , "gh-stats -u IonicaBizau # Show the calendar"
+          , "gh-stats -r IonicaBizau/git-stats # Repository stats"
+        ]
+      , docs_url: "https://github.com/IonicaBizau/gh-stats"
+    }, [
+        userOption, repoOption, noAnsiOption
+      , lightOption, calOption, userStatsOption
+      , repoStatsOption
+    ])
+  , stats = new GitHubStats({
+        theme: noAnsiOption.is_provided
+        ? null : (lightOption.is_provided
+        ? "LIGHT" : "DARK")
+      , repo: repoStatsOption.is_provided
+      , user: userStatsOption.is_provided
+      , cal: calOption.is_provided
+    })
+  , func = null
+  , arg = null
+  ;
+
+if (userOption.is_provided) {
+    func = stats.fromUser
+    arg = userOption.value
+} else if (repoOption.is_provided) {
+    func = stats.fromRepo;
+    arg = repoOption.value;
+}
+
+if (func) {
+    return func.call(stats, arg, function (err, output) {
+        if (err) { return Logger.log(err, "error"); }
+        console.log(output);
+    });
+}
+
+console.log(parser.displayHelp());
