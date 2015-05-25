@@ -33,7 +33,7 @@ var userOption = new Clp.Option(["u", "user"], "The GitHub user to get stats abo
     }, [
         userOption, repoOption, noAnsiOption
       , lightOption, calOption, userStatsOption
-      , repoStatsOption
+      , repoStatsOption, tokenOption
     ])
   , stats = new GitHubStats({
         theme: noAnsiOption.is_provided
@@ -44,15 +44,20 @@ var userOption = new Clp.Option(["u", "user"], "The GitHub user to get stats abo
       , s_repo: repoStatsOption.is_provided
       , s_user: userStatsOption.is_provided
       , cal: calOption.is_provided
+      , token: tokenOption.value
     })
   ;
 
+Logger.log("Fetching data...", "info");
 stats.toString(function (err, output, warns) {
     if (err) { return Logger.log(err, "error"); }
     if (warns.length) {
         warns.forEach(function (c) {
             Logger.log(c, "warn");
         });
+    }
+    if (!output || !output.trim()) {
+        return console.log(parser.displayHelp());
     }
     console.log(output);
 });
