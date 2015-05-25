@@ -13,6 +13,7 @@ Logger.config.logLevel = 4;
 // Create options and add them
 var userOption = new Clp.Option(["u", "user"], "The GitHub user to get stats about.", "user")
   , repoOption = new Clp.Option(["r", "repo"], "The full repository name.", "repository")
+  , tokenOption = new Clp.Option(["t", "token"], "GitHub access token to access private resources or to increase the rate limit.", "token")
   , noAnsiOption = new Clp.Option(["n", "no-ansi"], "Disable ansi styles.")
   , lightOption = new Clp.Option(["l", "light"], "Use the light theme.")
   , calOption = new Clp.Option(["c", "calendar"], "Show the calendar.")
@@ -38,27 +39,20 @@ var userOption = new Clp.Option(["u", "user"], "The GitHub user to get stats abo
         theme: noAnsiOption.is_provided
         ? null : (lightOption.is_provided
         ? "LIGHT" : "DARK")
-      , repo: repoStatsOption.is_provided
-      , user: userStatsOption.is_provided
+      , repo: repoOption.value
+      , user: userOption.value
+      , s_repo: repoStatsOption.is_provided
+      , s_user: userStatsOption.is_provided
       , cal: calOption.is_provided
     })
-  , func = null
-  , arg = null
   ;
 
-if (userOption.is_provided) {
-    func = stats.fromUser
-    arg = userOption.value
-} else if (repoOption.is_provided) {
-    func = stats.fromRepo;
-    arg = repoOption.value;
-}
-
-if (func) {
-    return func.call(stats, arg, function (err, output) {
-        if (err) { return Logger.log(err, "error"); }
-        console.log(output);
-    });
-}
-
-console.log(parser.displayHelp());
+stats.toString(function (err, output, warns) {
+    if (err) { return Logger.log(err, "error"); }
+    if (warns.length) {
+        warns.forEach(function (c) {
+            Logger.log(c, "warn");
+        });
+    }
+    console.log(output);
+});
