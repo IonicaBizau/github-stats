@@ -1,18 +1,19 @@
 {
-  "name": "gh-stats",
-  "version": "1.0.0",
+  "name": "github-stats",
+  "version": "0.0.1",
   "description": "Visualize stats about GitHub users and projects in your terminal.",
   "main": "lib/index.js",
   "devDependencies": {},
   "bin": {
-      "gh-stats": "./bin/gh-stats"
+    "github-stats": "./bin/github-stats",
+    "gh-stats": "./bin/github-stats"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/IonicaBizau/gh-stats.git"
+    "url": "git+ssh://git@github.com/IonicaBizau/github-stats.git"
   },
   "keywords": [
     "stats",
@@ -24,9 +25,9 @@
   "author": "Ionică Bizău <bizauionica@gmail.com>",
   "license": "KINDLY",
   "bugs": {
-    "url": "https://github.com/IonicaBizau/gh-stats/issues"
+    "url": "https://github.com/IonicaBizau/github-stats/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/gh-stats",
+  "homepage": "https://github.com/IonicaBizau/github-stats",
   "dependencies": {
     "ansi-parser": "^3.0.0",
     "cli-gh-cal": "^1.0.0",
@@ -39,7 +40,7 @@
     "bug-killer": "^4.0.0"
   },
   "blah": {
-    "h_img": "http://i.imgur.com/OWT4C4v.png",
+    "h_img": "http://i.imgur.com/1cEkaOy.png",
     "ex_img": "http://i.imgur.com/JFNQxbv.png"
   }
 }
