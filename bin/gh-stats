@@ -54,6 +54,10 @@ if (!repoStatsOption.is_provided && !userStatsOption.is_provided) {
     }
 }
 
+if (!userOption.is_provided || !repoOption.is_provided) {
+    return console.log(parser.displayHelp());
+}
+
 Logger.log("Fetching data...", "info");
 stats.toString(function (err, output, warns) {
     if (err) { return Logger.log(err, "error"); }
