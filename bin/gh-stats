@@ -32,27 +32,31 @@ var userOption = new Clp.Option(["u", "user"], "The GitHub user to get stats abo
       , lightOption, calOption, userStatsOption
       , repoStatsOption, tokenOption
     ])
-  , stats = new GitHubStats({
-        theme: noAnsiOption.is_provided
-        ? null : (lightOption.is_provided
-        ? "LIGHT" : "DARK")
-      , repo: repoOption.value
-      , user: userOption.value
-      , s_repo: repoStatsOption.is_provided
-      , s_user: userStatsOption.is_provided
-      , cal: calOption.is_provided
-      , token: tokenOption.value
-    })
+  , stats = null
   ;
 
 if (!repoStatsOption.is_provided && !userStatsOption.is_provided) {
     if (repoOption.value) {
-        stats.s_repo = true;
+        repoStatsOption.is_provided = true;
     } else if (userOption.value) {
-        stats.s_user = true;
-        stats.cal = true;
+        userStatsOption.is_provided = true;
+        calOption.is_provided = true;
     }
 }
+
+// Create the GitHubStats instance
+stats = new GitHubStats({
+    theme: noAnsiOption.is_provided
+    ? null : (lightOption.is_provided
+    ? "LIGHT" : "DARK")
+  , repo: repoOption.value
+  , user: userOption.value
+  , s_repo: repoStatsOption.is_provided
+  , s_user: userStatsOption.is_provided
+  , cal: calOption.is_provided
+  , token: tokenOption.value
+});
+
 
 if (!userOption.is_provided && !repoOption.is_provided) {
     return console.log(parser.displayHelp());
