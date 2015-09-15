@@ -48,6 +48,14 @@ var userOption = new Clp.Option(["u", "user"], "The GitHub user to get stats abo
     })
   ;
 
+if (!repoStatsOption.is_provided && !userStatsOption.is_provided) {
+    if (repoOption.value) {
+        stats.s_repo = true;
+    } else if (userOption.value) {
+        stats.s_user = true;
+    }
+}
+
 Logger.log("Fetching data...", "info");
 stats.toString(function (err, output, warns) {
     if (err) { return Logger.log(err, "error"); }
