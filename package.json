@@ -1,7 +1,7 @@
 {
   "name": "gh-stats",
   "version": "1.0.0",
-  "description": "Get stats about GitHub users and projects in your terminal.",
+  "description": "Visualize stats about GitHub users and projects in your terminal.",
   "main": "lib/index.js",
   "devDependencies": {},
   "bin": {
@@ -37,5 +37,9 @@
     "ul": "^5.0.0",
     "clp": "^3.0.0",
     "bug-killer": "^4.0.0"
+  },
+  "blah": {
+    "h_img": "http://i.imgur.com/OWT4C4v.png",
+    "ex_img": "http://i.imgur.com/JFNQxbv.png"
   }
 }
