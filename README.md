@@ -39,6 +39,65 @@ $ npm i -g gh-stats
 
 Then, run `gh-stats --help` and see what the cli tool can do.
 
+```sh
+$ gh-stats -h
+Usage: gh-stats [options]
+
+Options:
+  -u, --user <user>        The GitHub user to get stats about.
+  -r, --repo <repository>  The full repository name.
+  -n, --no-ansi            Disable ansi styles.
+  -l, --light              Use the light theme.
+  -c, --calendar           Show the calendar.
+  --user-stats, --us       Display user stats.
+  --repo-stats, --rs       Display repository stats.
+  -t, --token <token>      GitHub access token to access private resources or
+                           to increase the rate limit.
+  -h, --help               Displays this help.
+  -v, --version            Displays version information.
+
+Examples:
+  gh-stats -u IonicaBizau -r gh-stats --us --rs -c # Show everything
+  gh-stats -u IonicaBizau # Show the calendar
+  gh-stats -r IonicaBizau/git-stats # Repository stats
+
+Documentation can be found at https://github.com/IonicaBizau/gh-stats
+```
+
+## Example
+
+Here is an example how to use this package as library.
+
+```js
+// Dependencies
+var GitHubStats = require("gh-stats");
+
+// Create the GitHubStats instance
+var stats = new GitHubStats({
+
+    // Enable light theme for calendar
+    theme: "LIGHT"
+
+    // Provide the repository and the username
+  , repo: "hubber-memory-game"
+  , user: "alysonla"
+
+    // Visualize repository, user and calendar stats
+  , s_repo: true
+  , s_user: true
+  , cal: true
+
+    // A token could help to visualize private stats
+  , token: "an optional token"
+});
+
+// Stringify everything
+stats.toString(function (err, output, warns) {
+    console.log(err || output);
+});
+
+```
+
 ## Documentation
 
 For full API reference, see the [DOCUMENTATION.md][docs] file.

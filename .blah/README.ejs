@@ -64,6 +64,31 @@ $ npm i -g <%- _.pack.name %>
 
 Then, run `<%- _.pack.name %> --help` and see what the cli tool can do.
 
+```sh
+$ <%- _.pack.name %> -h
+Usage: gh-stats [options]
+
+Options:
+  -u, --user <user>        The GitHub user to get stats about.
+  -r, --repo <repository>  The full repository name.
+  -n, --no-ansi            Disable ansi styles.
+  -l, --light              Use the light theme.
+  -c, --calendar           Show the calendar.
+  --user-stats, --us       Display user stats.
+  --repo-stats, --rs       Display repository stats.
+  -t, --token <token>      GitHub access token to access private resources or
+                           to increase the rate limit.
+  -h, --help               Displays this help.
+  -v, --version            Displays version information.
+
+Examples:
+  gh-stats -u IonicaBizau -r gh-stats --us --rs -c # Show everything
+  gh-stats -u IonicaBizau # Show the calendar
+  gh-stats -r IonicaBizau/git-stats # Repository stats
+
+Documentation can be found at https://github.com/IonicaBizau/gh-stats
+```
+
 <% } %>
 
 <% // Show the example if there is one %>
