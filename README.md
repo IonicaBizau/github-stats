@@ -13,34 +13,34 @@
 <!-- * * * Thanks! * * *                                                    -->
 <!---------------------------------------------------------------------------->
 
-![gh-stats](http://i.imgur.com/OWT4C4v.png)
+![github-stats](http://i.imgur.com/1cEkaOy.png)
 
-# `$ gh-stats` [![Donate now][donate-now]][paypal-donations]
+# `$ github-stats` [![Donate now][donate-now]][paypal-donations]
 
 Visualize stats about GitHub users and projects in your terminal.
 
 This project is under the [`git-stats`](https://github.com/IonicaBizau/git-stats)
 umbrella. `git-stats` tracks your local commits and the visualization is similar. :sparkle:
 
-![gh-stats](http://i.imgur.com/JFNQxbv.png)
+![github-stats](http://i.imgur.com/JFNQxbv.png)
 
 ## Installation
 
 ```sh
-$ npm i gh-stats
+$ npm i github-stats
 ```
 
 ### CLI Usage
 You can install the package globally and use it as command line tool:
 
 ```sh
-$ npm i -g gh-stats
+$ npm i -g github-stats
 ```
 
-Then, run `gh-stats --help` and see what the cli tool can do.
+Then, run `github-stats --help` and see what the cli tool can do.
 
 ```sh
-$ gh-stats -h
+$ github-stats -h
 Usage: gh-stats [options]
 
 Options:
@@ -70,7 +70,7 @@ Here is an example how to use this package as library.
 
 ```js
 // Dependencies
-var GitHubStats = require("gh-stats");
+var GitHubStats = require("github-stats");
 
 // Create the GitHubStats instance
 var stats = new GitHubStats({
