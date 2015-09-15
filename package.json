@@ -4,6 +4,9 @@
   "description": "Get stats about GitHub users and projects in your terminal.",
   "main": "lib/index.js",
   "devDependencies": {},
+  "bin": {
+      "gh-stats": "./bin/gh-stats"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
