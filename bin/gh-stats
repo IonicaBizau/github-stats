@@ -7,9 +7,6 @@ var GitHubStats = require("../lib")
   , Logger = require("bug-killer")
   ;
 
-// Logger config
-Logger.config.logLevel = 4;
-
 // Create options and add them
 var userOption = new Clp.Option(["u", "user"], "The GitHub user to get stats about.", "user")
   , repoOption = new Clp.Option(["r", "repo"], "The full repository name.", "repository")
@@ -53,6 +50,7 @@ if (!repoStatsOption.is_provided && !userStatsOption.is_provided) {
         stats.s_repo = true;
     } else if (userOption.value) {
         stats.s_user = true;
+        stats.cal = true;
     }
 }
 
