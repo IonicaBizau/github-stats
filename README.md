@@ -22,6 +22,8 @@ Visualize stats about GitHub users and projects in your terminal.
 This project is under the [`git-stats`](https://github.com/IonicaBizau/git-stats)
 umbrella. `git-stats` tracks your local commits and the visualization is similar. :sparkle:
 
+[`github-profile-languages`](https://github.com/IonicaBizau/github-profile-languages) provides the same pie chart visualization, but in browser (for users and repositories).
+
 ![github-stats](http://i.imgur.com/JFNQxbv.png)
 
 ## Installation
