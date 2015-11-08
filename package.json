@@ -22,7 +22,7 @@
     "line",
     "calendar"
   ],
-  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
   "license": "KINDLY",
   "bugs": {
     "url": "https://github.com/IonicaBizau/github-stats/issues"
@@ -41,6 +41,14 @@
   },
   "blah": {
     "h_img": "http://i.imgur.com/1cEkaOy.png",
-    "ex_img": "http://i.imgur.com/JFNQxbv.png"
+    "ex_img": "http://i.imgur.com/JFNQxbv.png",
+    "description": [
+      {
+        "p": [
+          "This project is under the [`git-stats`](https://github.com/IonicaBizau/git-stats) umbrella. `git-stats` tracks your local commits and the visualization is similar. :sparkle:",
+          "[`github-profile-languages`](https://github.com/IonicaBizau/github-profile-languages) provides the same pie chart visualization, but in browser (for users and repositories)."
+        ]
+      }
+    ]
   }
 }
