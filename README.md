@@ -1,6 +1,7 @@
 [![github-stats](http://i.imgur.com/1cEkaOy.png)](#)
 
 # `$ github-stats` [![Support this project][donate-now]][paypal-donations]
+
 Visualize stats about GitHub users and projects in your terminal.
 
 This project is under the [`git-stats`](https://github.com/IonicaBizau/git-stats) umbrella. `git-stats` tracks your local commits and the visualization is similar. :sparkle:
