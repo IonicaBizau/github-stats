@@ -1,6 +1,6 @@
 {
   "name": "github-stats",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Visualize stats about GitHub users and projects in your terminal.",
   "main": "lib/index.js",
   "devDependencies": {},
@@ -59,6 +59,7 @@
     "src/",
     "resources/",
     "menu/",
+    "scripts/",
     "cli.js",
     "index.js"
   ]
