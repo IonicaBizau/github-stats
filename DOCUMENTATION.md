@@ -6,6 +6,7 @@ You can see below the API reference of this module.
 Creates a new `GitHubStats` instance.
 
 #### Params
+
 - **Object** `options`: An object containing the following fields:
  - `repo` (String): The GitHub repository. It can be the
  - ` (String): The GitHub repository.
@@ -20,6 +21,7 @@ Creates a new `GitHubStats` instance.
 Fetches user stats.
 
 #### Params
+
 - **Function** `callback`: The callback function.
 
 #### Return
@@ -29,6 +31,7 @@ Fetches user stats.
 Fetches repository stats.
 
 #### Params
+
 - **Function** `callback`: The callback function.
 
 #### Return
@@ -38,6 +41,7 @@ Fetches repository stats.
 Fetches user calendar statistics in JSON format.
 
 #### Params
+
 - **Function** `callback`: The callback function.
 
 #### Return
@@ -47,5 +51,6 @@ Fetches user calendar statistics in JSON format.
 Stringifies the statistics.
 
 #### Params
+
 - **Function** `callback`: The callback function.
 
