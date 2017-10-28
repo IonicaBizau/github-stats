@@ -23,6 +23,9 @@
     "calendar"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com> (https://ionicabizau.net)",
+  "contributors": [
+    "Evan Baker (github.com/rbtr)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/IonicaBizau/github-stats/issues"
