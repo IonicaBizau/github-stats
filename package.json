@@ -33,14 +33,14 @@
   "homepage": "https://github.com/IonicaBizau/github-stats",
   "dependencies": {
     "ansi-parser": "^3.0.0",
-    "cli-gh-cal": "^1.0.0",
-    "cli-pie": "^2.0.0",
-    "couleurs": "^5.0.0",
-    "gh-polyglot": "^2.0.0",
-    "ghcal": "^2.0.0",
-    "ul": "^5.0.0",
+    "bug-killer": "^4.0.0",
+    "cli-gh-cal": "^1.4.9",
+    "cli-pie": "^2.4.0",
     "clp": "^3.0.0",
-    "bug-killer": "^4.0.0"
+    "couleurs": "^6.0.9",
+    "gh-polyglot": "^2.3.1",
+    "ghcal": "^2.3.10",
+    "ul": "^5.0.0"
   },
   "blah": {
     "h_img": "http://i.imgur.com/1cEkaOy.png",
