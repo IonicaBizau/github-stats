@@ -64,7 +64,7 @@ You can install the package globally and use it as command line tool:
 
 ```sh
 # Using npm
-npm install --global github-stats
+npm install --location=global github-stats
 
 # Using yarn
 yarn global add github-stats
